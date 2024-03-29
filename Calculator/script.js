@@ -1,4 +1,4 @@
-function calc(a) {
+function cal(a) {
     let x = document.getElementsByClassName("calc")[0];
     let resultField = x.querySelector(".result");
     resultField.value += a;
@@ -26,3 +26,4 @@ function del() {
     let resultField = x.querySelector(".result");
     resultField.value = resultField.value.slice(0, -1);
 }
+
