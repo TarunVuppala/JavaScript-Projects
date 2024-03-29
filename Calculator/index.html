@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./bootstrap.css">
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <p class="h1">Calculator</p>
+    <form class="calc container">
+        <div class="">
+            <input class="col-4 result" type="text" id="" value="">
+            <div class="row">
+                <input class="col-1" type="button" onclick="calc('(')" value="(">
+                <input class="col-1" type="button" onclick="calc(')')" value=")">
+                <input class="col-1" type="button" onclick="del()" ondblclick="clearResult()" value="DEL">
+                <input class="col-1" type="button" onclick="calc('+')" value="+">
+            </div>
+            <div class="row">
+                <input class="col-1" type="button" onclick="calc(7)" value="7">
+                <input class="col-1" type="button" onclick="calc(8)" value="8">
+                <input class="col-1" type="button" onclick="calc(9)" value="9">
+                <input class="col-1" type="button" onclick="calc('-')" value="-">
+            </div>
+            <div class="row">
+                <input class="col-1" type="button" onclick="calc(4)" value="4">
+                <input class="col-1" type="button" onclick="calc(5)" value="5">
+                <input class="col-1" type="button" onclick="calc(6)" value="6">
+                <input class="col-1" type="button" onclick="calc('*')" value="*">
+            </div>
+            <div class="row">
+                <input class="col-1" type="button" onclick="calc(1)" value="1">
+                <input class="col-1" type="button" onclick="calc(2)" value="2">
+                <input class="col-1" type="button" onclick="calc(3)" value="3">
+                <input class="col-1" type="button" onclick="calc('/')" value="/">
+            </div>
+            <div class="row">
+                <input class="col-1" type="button" onclick="calc(0)" value="0">
+                <input class="col-1" type="button" onclick="calc('.')" value=".">
+                <input class="col-1" type="button" onclick="calc('%')" value="%">
+                <input class="col-1" type="button" onclick="res()" value="=">
+            </div>
+        </div>
+    </form>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
