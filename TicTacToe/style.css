@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 25px;
+}
+
+h2 {
+    margin: 25px;
+}
+
+.details {
+    margin: 50px;
+}
+
+input {
+    font-size: large;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 40%;
+    margin-top: 15%; */
+}
+
+.row {
+    display: block;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
