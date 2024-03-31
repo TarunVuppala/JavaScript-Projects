@@ -1,0 +1,143 @@
+:root {
+    --primary: #8693abff; /* Cool Gray */
+    --secondary: #bdd4e7ff; /* Columbia Blue */
+    --tertiary: #212227ff; /* Raisin Black */
+    --quaternary: #637074ff; /* Dim Gray */
+    --quinary: #aab9cfff; /* Powder Blue */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    font-size: 18px;
+}
+
+.head {
+    background-color: var(--tertiary);
+    padding: 20px;
+    text-align: center;
+}
+
+.head h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid var(--tertiary);
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 70%;
+    transition: border-color 0.3s ease, font-size 0.3s ease, font-family 0.3s ease;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--tertiary);
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: transparent;
+}
+
+.sub {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #03FCBA;
+    color: var(--tertiary);
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease, margin 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.sub:hover {
+    background-color: #00cc9c;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reset {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4646;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease, margin 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.reset:hover {
+    background-color: #fd2c2c;
+    color: var(--tertiary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+    padding: 20px;
+}
+
+#items {
+    list-style: none;
+    padding: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+ul li {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: var(--quinary);
+    border-radius: 5px;
+    position: relative;
+    font-size: 20px;
+}
+
+ul li:hover {
+    background-color: var(--primary);
+}
+
+.delete {
+    color: var(--tertiary);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: color 0.3s ease;
+}
+
+.delete:hover {
+    color: #f82d2d;
+}
+
+.check {
+    margin-right: 10px;
+}
