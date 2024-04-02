@@ -1,0 +1,170 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #86BBD8, #33658A);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    padding: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.search-btn {
+    background-color: #33658A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.search-btn i {
+    font-size: 18px;
+}
+
+.main {
+    background: linear-gradient(to bottom, #33658A, #2F4858);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.head img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F6AE2D;
+}
+
+.city-info {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #F6AE2D;
+}
+
+.date {
+    text-align: right;
+    font-size: 0.8em;
+    color: #F6AE2D;
+}
+
+.time {
+    font-size: 1.2em;
+}
+
+.temp,
+.wind,
+.atm {
+    margin-top: 30px;
+}
+
+.temp p,
+.wind p,
+.atm p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.weatherDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card {
+    margin-top: 40px;
+    background-color: #2F4858;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-title {
+    color: #F6AE2D;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-text span {
+    color: #F26419;
+    font-size: 1.1em;
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    height: 200px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    background-color: #F26419;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #F6AE2D;
+}

@@ -1,0 +1,96 @@
+// let countryDiv = document.querySelector(".selectCountry select");
+// let wD = document.querySelector(".w");
+// for (const countryCode in countries) {
+//     let option = document.createElement("option");
+//     option.value = countryCode;
+//     option.innerText = countries[countryCode];
+//     countryDiv.appendChild(option);
+// }
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+// const URL = "api.openweathermap.org/data/2.5/forecast?q=";
+const URL = "https://api.openweathermap.org/data/2.5/weather?q=";
+const apiID = "0093bcf8f4247287e097df0bd7bb3e7e";
+let city = document.querySelector(".search input").value;
+const btn = document.getElementsByClassName("search-btn")[0];
+const para = document.querySelector(".tp");
+
+const getWindDirection = (degrees) => {
+    const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    const index = Math.round(degrees / 45) % 8;
+    return directions[index];
+};
+
+const updateWeatherDetails = (data) => {
+    document.getElementById("cityInfo").textContent = `${data.name}, ${data.sys.country}`;
+
+    document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    document.getElementById("weatherIcon").alt = data.weather[0].description;
+
+    const currentDate = new Date(data.dt * 1000);
+    document.querySelector('.date .day').textContent = currentDate.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    document.querySelector('.date .time').textContent = currentDate.toLocaleTimeString();
+
+    document.getElementById("currentTemp").textContent = `${data.main.temp}°C`;
+    document.getElementById("feelsLikeTemp").textContent = `${data.main.feels_like}°C`;
+
+    document.getElementById("windSpeed").textContent = `${data.wind.speed} m/s`;
+    document.getElementById("windDirection").textContent = getWindDirection(data.wind.deg);
+
+    document.getElementById("pressure").textContent = `${data.main.pressure} hPa`;
+    document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+
+    document.getElementById("cloudiness").textContent = `${data.clouds.all}%`;
+
+    document.getElementById("weatherDetails").classList.remove("d-none");
+    document.getElementById("weatherCards").classList.remove("d-none");
+};
+
+const getWeather = async (city) => {
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiID}`);
+    let data = await response.json();
+
+    // para.innerText = JSON.stringify(data); //for displaying object in html page
+
+    console.log("API Response:", data); // Log the API response for debugging
+
+    if (data.cod === 200) {
+        updateWeatherDetails(data);
+    } else {
+        console.log("City not found:", data.message); // Log the error message
+        alert("City not found. Please enter a valid city name.");
+    }
+};
+
+
+const getTime = () => {
+    let today = new Date();
+    let month = today.getMonth();
+    let date = today.getDate();
+    let day = today.getDay();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    let amPm = "AM";
+    if (h > 12) {
+        amPm = "PM";
+        h -= 12;
+    }
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+
+    document.querySelector('.date .day').textContent = `${monthsOfYear[month]} ${date} ${daysOfWeek[day]}`;
+    document.querySelector('.date .time').textContent = `${h}:${m}:${s} ${amPm}`;
+    // let time = `${monthsOfYear[month]} ${date} ${daysOfWeek[day]} ${h}:${m}:${s} ${amPm}`;
+    // console.log(time);
+};
+
+setInterval(getTime, 1000);
+
+btn.addEventListener("click", () => {
+    const input=document.querySelector(".search cityInput").value;
+    city = input.value;
+    input.value = "";
+
+    getWeather(city);
+});
